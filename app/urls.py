@@ -15,4 +15,5 @@ urlpatterns = [
     path('delete-phone/<pk>', views.DeletePhoneView.as_view(), name='delete-phone'),
     path('delete-email/<pk>', views.DeleteEmailView.as_view(), name='delete-email'),
     path('delete-account/<pk>', views.DeleteAccountView.as_view(), name='delete-account'),
+    path('view-password/<pk>', views.PasswordView.as_view(), name='view-password'),
 ]

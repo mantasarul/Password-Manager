@@ -62,6 +62,7 @@ class EditEmailView(UpdateView):
     fields = '__all__'
     success_url = '/add-email'
 
+
 class EditAccountView(UpdateView):
     model = Account
     template_name = 'add-account.html'
@@ -90,5 +91,14 @@ class DeleteAccountView(DeleteView):
 class DeleteLoginView(DeleteView):
     pass
 
+
+class PasswordView(DetailView):
+    model = Account
+    template_name = 'view-password.html'
+
+
+class LoginView(DetailView):
+    model = Codes
+    template_name = 'view-login.html'
 
 

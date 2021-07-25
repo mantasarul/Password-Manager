@@ -20,7 +20,8 @@
             <tr>
                 <td>{{acc.category}}</td>
                 <td>{{acc.username}}</td>
-                <td>{{acc.password}}</td>
+                {% comment %} <td>{{acc.password}}</td> {% endcomment %}
+                <td><a href="{% url 'view-password' acc.id %}">View</a></td>
                 <td>{{acc.email_id}}</td>
                 <td>{{acc.phone_id}}</td>
                 <td><a href="{% url 'all-code' %}">View</a></td>
