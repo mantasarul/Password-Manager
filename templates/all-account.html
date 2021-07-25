@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}All Accounts{% endblock title %}
+
+{% block content %}
+
+    <h2>All Accounts</h2>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Category</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Email Address</th>
+            <th>Phone Number</th>
+            <th>Recovery Codes</th>
+            <th>Action</th>
+        </tr>
+        {% for acc in object_list %}
+            <tr>
+                <td>{{acc.category}}</td>
+                <td>{{acc.username}}</td>
+                <td>{{acc.password}}</td>
+                <td>{{acc.email_id}}</td>
+                <td>{{acc.phone_id}}</td>
+                <td><a href="{% url 'all-code' %}">View</a></td>
+                <td><a href="{% url 'edit-account' acc.id %}">Edit</a> <a href="{% url 'delete-account' acc.id %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock content %}

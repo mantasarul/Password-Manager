@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Recovery Codes{% endblock title %}
+
+{% block content %}
+
+<table class="table table-striped">
+    <tr>
+        <td>Recover Codes</td>
+        <td>Action</td>
+    </tr>
+    {% for object in object_list %}
+        <tr>
+            <td>{{object.codes}}</td>
+            <td><a href="">Delete</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

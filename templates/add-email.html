@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Email Address{% endblock title %}
+
+{% block content %}
+    <h2>Add New Email Address</h2>
+    <form action="" method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type='submit' class="btn btn-success">Submit</button>
+    </form>
+
+    <br>
+    <table class="table table-striped">
+        <tr>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        {% for email in object_list %}
+            <tr>
+                <td>{{email.email}}</td>
+                <td><a href="{% url 'edit-email' email.id %}">Edit</a> <a href="{% url 'delete-email' email.id %}">Delete</a></td>
+            </tr>    
+        {% endfor %}
+    </table>
+
+{% endblock content %}

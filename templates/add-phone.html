@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Phone Number{% endblock title %}
+
+{% block content %}
+    <h2>Add New Phone Number</h2>
+    <form action="" method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type='submit' class="btn btn-success">Submit</button>
+    </form>
+
+    <br>
+    <table class="table table-striped">
+        <tr>
+            <th>Number</th>
+            <th>Action</th>
+        </tr>
+        {% for number in object_list %}
+            <tr>
+                <td>{{number.phone}}</td>
+                <td><a href="{% url 'edit-phone' number.id %}">Edit</a> <a href="{% url 'delete-phone' number.id %}">Delete</a></td>
+            </tr>    
+        {% endfor %}
+    </table>
+
+{% endblock content %}
