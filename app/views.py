@@ -32,7 +32,7 @@ class AddAccountView(CreateView):
     model = Account
     form_class = AccountForm
     template_name = 'add-account.html'
-    success_url = 'home'
+    success_url = '/'
 
 
 class AllAccountView(ListView):
