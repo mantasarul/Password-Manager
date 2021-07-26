@@ -99,9 +99,14 @@ class DeleteLoginView(DeleteView):
     pass
 
 
+# class PasswordView(DetailView):
+#     model = Account
+#     template_name = 'view-password.html'
+
+
 class PasswordView(DetailView):
     model = Account
-    template_name = 'view-password.html'
+    template_name = 'all-account.html'
 
 
 class LoginView(DetailView):

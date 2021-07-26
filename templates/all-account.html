@@ -24,111 +24,61 @@
                 {% comment %} <td><a href="{% url 'view-password' acc.id %}">View</a></td> {% endcomment %}
 
 
-
-
                  <td>
-                <a href="" data-toggle='modal' data-target="">
-                <div id="version-display" data-toggle="modal" data-target="#myModal">
-                View
-                </div>
-                </a>
-                    <div id="myModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                         <!-- Modal content-->
-                            <div class="modal-content">
-              
-                                <div class="modal-header">
-                                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-                                <h4 class="modal-title">Password</h4>
-                                </div>
-                
-                <div class="modal-body">
-                    <div class="dev-info">
-                      <p class=""><b>Your password:</b></p>
-                      <p>{{acc.password}}</p><br>          
-                    </div>
-                </div>
-
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+                    <a href="{% url 'view-password' acc.id %}" data-toggle="modal" data-target="#exampleModal">View</a>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Your Password</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h4>Your Password is: {{acc.password}}</h4>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
                         </div>
                     </div>
-                </div>        
+                    </div>
                 </td>
-
-
-
-
-
 
 
                 <td>{{acc.email_id}}</td>
                 <td>{{acc.phone_id}}</td>
                 <td><a href="{% url 'all-code' %}">View</a></td>
 
-
-
-
-
-
-
-
                 
                 <td>
-<a href="{% url 'edit-account' acc.id %}" data-toggle="modal" data-target="#exampleModal">Edit</a>
+                    <a href="{% url 'edit-account' acc.id %}" data-toggle="modal" data-target="#exampleModal">Edit</a>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Account</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="" method='post'>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type='submit' class="btn btn-success">Submit</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <a href="{% url 'delete-account' acc.id %}">Delete</a></td>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit Account</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" method='post'>
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type='submit' class="btn btn-success">Submit</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>   
+                    <a href="{% url 'delete-account' acc.id %}">Delete</a>
+                </td>
 
 
                 {% comment %} <td><a href="{% url 'edit-account' acc.id %}">Edit</a> <a href="{% url 'delete-account' acc.id %}">Delete</a></td> {% endcomment %}
