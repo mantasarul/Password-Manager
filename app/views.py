@@ -70,6 +70,13 @@ class EditAccountView(UpdateView):
     success_url = '/all-account'
 
 
+# class EditAccountView(UpdateView):
+#     model = Account
+#     template_name = 'all-account.html'
+#     fields = '__all__'
+#     success_url = '/all-account'
+
+
 class DeletePhoneView(DeleteView):
     model = Phone
     template_name = 'delete-phone.html'

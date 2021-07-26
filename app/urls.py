@@ -12,6 +12,9 @@ urlpatterns = [
     path('edit-phone/<pk>', views.EditPhoneView.as_view(), name='edit-phone'),
     path('edit-email/<pk>', views.EditEmailView.as_view(), name='edit-email'),
     path('edit-account/<pk>', views.EditAccountView.as_view(), name='edit-account'),
+
+    # path('all-account/#/<pk>', views.EditAccountView.as_view(), name='edit-account'),
+
     path('delete-phone/<pk>', views.DeletePhoneView.as_view(), name='delete-phone'),
     path('delete-email/<pk>', views.DeleteEmailView.as_view(), name='delete-email'),
     path('delete-account/<pk>', views.DeleteAccountView.as_view(), name='delete-account'),
